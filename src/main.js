@@ -98,17 +98,17 @@ const locations = [
   {
     name: 'Mordor / Mount Doom',
     point: [540, 548],
-    lore: 'Sauron\'s black black land and the fire where the One Ring was forged and unmade.',
+    lore: 'Sauron\'s black land and the fire where the One Ring was forged and unmade.',
   },
 ]
 
 locations.forEach((location) => {
   L.circleMarker(location.point, {
-    radius: 8,
+    radius: 5,
     color: '#4a311e',
-    weight: 2,
+    weight: 1.5,
     fillColor: '#a5482a',
-    fillOpacity: 0.85,
+    fillOpacity: 0.5,
   })
     .addTo(map)
     .bindPopup(`<h2>${location.name}</h2><p>${location.lore}</p>`)
