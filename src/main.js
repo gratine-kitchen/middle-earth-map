@@ -16,9 +16,14 @@ document.querySelector('#app').innerHTML = `
 
 const hoverCoords = document.querySelector('#hover-coords')
 
+const IMAGE_WIDTH = 4812
+const IMAGE_HEIGHT = 3324
+const LEGACY_IMAGE_WIDTH = 1296
+const LEGACY_IMAGE_HEIGHT = 900
+
 const mapBounds = [
   [0, 0],
-  [900, 1296],
+  [IMAGE_HEIGHT, IMAGE_WIDTH],
 ]
 
 const map = L.map('map', {
@@ -28,16 +33,16 @@ const map = L.map('map', {
   zoomControl: true,
 })
 
-L.imageOverlay('/middle-earth.jpg', mapBounds).addTo(map)
+L.imageOverlay('/middle-earth-hd.jpeg', mapBounds).addTo(map)
 map.fitBounds(mapBounds)
 map.setMaxBounds([
   [-120, -120],
-  [1020, 1416],
+  [IMAGE_HEIGHT + 120, IMAGE_WIDTH + 120],
 ])
 
 map.on('mousemove', (event) => {
   const { lat, lng } = event.latlng
-  const withinImage = lat >= 0 && lat <= 900 && lng >= 0 && lng <= 1296
+  const withinImage = lat >= 0 && lat <= IMAGE_HEIGHT && lng >= 0 && lng <= IMAGE_WIDTH
 
   if (withinImage) {
     hoverCoords.textContent = `lat: ${lat.toFixed(1)}, lng: ${lng.toFixed(1)}`
@@ -52,8 +57,8 @@ map.on('mouseout', () => {
 })
 
 // Coordinates are [lat, lng] in Leaflet CRS.Simple where [0,0] = bottom-left.
-// Converted from image pixels (px_x, px_y from top-left of 1296x900):
-//   lat = 900 - px_y,  lng = px_x
+// Converted from image pixels (px_x, px_y from top-left):
+//   lat = IMAGE_HEIGHT - px_y,  lng = px_x
 const locations = [
   {
     name: 'The Shire',
@@ -102,8 +107,13 @@ const locations = [
   },
 ]
 
+const latScale = IMAGE_HEIGHT / LEGACY_IMAGE_HEIGHT
+const lngScale = IMAGE_WIDTH / LEGACY_IMAGE_WIDTH
+
 locations.forEach((location) => {
-  L.circleMarker(location.point, {
+  const scaledPoint = [location.point[0] * latScale, location.point[1] * lngScale]
+
+  L.circleMarker(scaledPoint, {
     radius: 5,
     color: '#4a311e',
     weight: 1.5,
