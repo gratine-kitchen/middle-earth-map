@@ -105,6 +105,21 @@ h1 {
   line-height: 1.35;
 }
 
+.leaflet-tooltip {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--ink);
+  background: rgba(234, 214, 174, 0.96);
+  border: 1px solid rgba(74, 49, 30, 0.55);
+  box-shadow: 0 6px 14px rgba(25, 14, 7, 0.28);
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: rgba(74, 49, 30, 0.55);
+}
+
 @keyframes unfold {
   from {
     opacity: 0;

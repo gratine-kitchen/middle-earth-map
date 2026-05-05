@@ -57,8 +57,8 @@ map.on('mouseout', () => {
 const locations = [
   {
     name: 'The Shire',
-    point: [595, 205],
-    lore: 'A green and quiet homeland of Hobbits, where Bilbo and Frodo begin their journeys.',
+    point: [668, 275],
+    lore: '𝕸𝖎𝖈𝖍𝖊𝖑 𝕯𝖊𝖑𝖛𝖎𝖓𝖌, 𝖙𝖍𝖊 𝖑𝖆𝖗𝖌𝖊𝖘𝖙 𝖈𝖎𝖙𝖞 𝖎𝖓 𝖙𝖍𝖊 𝖘𝖍𝖗𝖎𝖗𝖊,𝖑𝖔𝖈𝖆𝖙𝖊𝖉 𝖎𝖓 𝖙𝖍𝖊 𝖜𝖍𝖎𝖙𝖊 𝖉𝖔𝖜𝖓𝖘.𝕻𝖔𝖕𝖚𝖑𝖆𝖙𝖊𝖉 𝖇𝖞 𝖍𝖔𝖇𝖇𝖎𝖙𝖘 ,𝖙𝖍𝖊 𝖒𝖆𝖞𝖔𝖗 𝖎𝖘 𝖂𝖎𝖑𝖑 𝖂𝖍𝖎𝖙𝖋𝖔𝖔𝖙. 𝕬𝖓𝖉 𝖙𝖍𝖊 𝖔𝖓𝖑𝖞 𝖕𝖗𝖎𝖘𝖔𝖓 𝖎𝖓 𝖙𝖍𝖊 𝕾𝖍𝖗𝖎𝖗𝖊 𝖙𝖍𝖊 𝕷𝖔𝖈𝖐𝖍𝖔𝖑𝖊𝖘 𝖆𝖗𝖊 𝖍𝖊𝖗𝖊.',
   },
   {
     name: 'Bree',
@@ -111,5 +111,10 @@ locations.forEach((location) => {
     fillOpacity: 0.5,
   })
     .addTo(map)
+    .bindTooltip(location.name, {
+      direction: 'top',
+      offset: [0, -8],
+      opacity: 0.95,
+    })
     .bindPopup(`<h2>${location.name}</h2><p>${location.lore}</p>`)
 })
