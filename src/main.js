@@ -8,10 +8,13 @@ document.querySelector('#app').innerHTML = `
       <p class="kicker">Legendarium Atlas</p>
       <h1>Middle-earth Interactive Map</h1>
       <p class="subtitle">Pan, zoom, and open popups to revisit key places from The Hobbit and The Lord of the Rings.</p>
+      <p id="hover-coords" class="hover-coords">Hover map to see coordinates</p>
     </header>
     <section id="map" aria-label="Middle-earth map"></section>
   </main>
 `
+
+const hoverCoords = document.querySelector('#hover-coords')
 
 const mapBounds = [
   [0, 0],
@@ -31,6 +34,22 @@ map.setMaxBounds([
   [-120, -120],
   [1020, 1416],
 ])
+
+map.on('mousemove', (event) => {
+  const { lat, lng } = event.latlng
+  const withinImage = lat >= 0 && lat <= 900 && lng >= 0 && lng <= 1296
+
+  if (withinImage) {
+    hoverCoords.textContent = `lat: ${lat.toFixed(1)}, lng: ${lng.toFixed(1)}`
+    return
+  }
+
+  hoverCoords.textContent = `lat: ${lat.toFixed(1)}, lng: ${lng.toFixed(1)} (outside image)`
+})
+
+map.on('mouseout', () => {
+  hoverCoords.textContent = 'Hover map to see coordinates'
+})
 
 // Coordinates are [lat, lng] in Leaflet CRS.Simple where [0,0] = bottom-left.
 // Converted from image pixels (px_x, px_y from top-left of 1296x900):
@@ -78,8 +97,8 @@ const locations = [
   },
   {
     name: 'Mordor / Mount Doom',
-    point: [445, 435],
-    lore: 'Sauron\'s black land and the fire where the One Ring was forged and unmade.',
+    point: [540, 548],
+    lore: 'Sauron\'s black black land and the fire where the One Ring was forged and unmade.',
   },
 ]
 

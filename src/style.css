@@ -65,6 +65,13 @@ h1 {
   font-size: 1rem;
 }
 
+.hover-coords {
+  margin: 0.65rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: rgba(45, 33, 21, 0.88);
+}
+
 #map {
   width: 100%;
   min-height: 420px;
