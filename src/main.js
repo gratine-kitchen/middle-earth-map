@@ -115,10 +115,10 @@ locations.forEach((location) => {
 
   L.circleMarker(scaledPoint, {
     radius: 5,
-    color: '#4a311e',
+    color: '#0b4fd9',
     weight: 1.5,
-    fillColor: '#a5482a',
-    fillOpacity: 0.5,
+    fillColor: '#2f8bff',
+    fillOpacity: 0.65,
   })
     .addTo(map)
     .bindTooltip(location.name, {
