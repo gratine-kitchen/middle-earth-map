@@ -5,8 +5,7 @@ import 'leaflet/dist/leaflet.css'
 document.querySelector('#app').innerHTML = `
   <main class="layout">
     <header class="map-header">
-      <p class="kicker">Legendarium Atlas</p>
-      <h1>Middle-earth Interactive Map</h1>
+      <h2>Middle-earth Interactive Map (Created by Mr. Capybara)</h2>
       <p class="subtitle">Pan, zoom, and open popups to revisit key places from The Hobbit and The Lord of the Rings.</p>
       <p id="hover-coords" class="hover-coords">Hover map to see coordinates</p>
     </header>
@@ -47,7 +46,7 @@ map.on('mousemove', (event) => {
   const withinImage = lat >= 0 && lat <= IMAGE_HEIGHT && lng >= 0 && lng <= IMAGE_WIDTH
 
   if (withinImage) {
-    hoverCoords.textContent = `lat: ${lat.toFixed(1)}, lng: ${lng.toFixed(1)}`
+    hoverCoords.textContent = `(lat: ${lat.toFixed(1)}, lng: ${lng.toFixed(1)})`
     return
   }
 
