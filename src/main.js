@@ -33,7 +33,9 @@ const map = L.map('map', {
   zoomControl: true,
 })
 
-L.imageOverlay('/middle-earth-hd.jpeg', mapBounds).addTo(map)
+const mapImageUrl = `${import.meta.env.BASE_URL}middle-earth-hd.jpeg`
+
+L.imageOverlay(mapImageUrl, mapBounds).addTo(map)
 map.fitBounds(mapBounds)
 map.setMaxBounds([
   [-120, -120],
