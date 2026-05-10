@@ -62,49 +62,104 @@ map.on('mouseout', () => {
 //   lat = IMAGE_HEIGHT - px_y,  lng = px_x
 const locations = [
   {
+    name: 'Annuminas',
+    point: [624, 390],
+    lore: 'Placeholder lore description for Annuminas.',
+  },
+  {
+    name: 'Bree',
+    point: [620, 400],
+    lore: 'Placeholder lore description for Bree.',
+  },
+  {
+    name: 'Bywater',
+    point: [660, 300],
+    lore: 'Placeholder lore description for Bywater.',
+  },
+  {
+    name: 'Cameth Brin',
+    point: [632, 370],
+    lore: 'Placeholder lore description for Cameth Brin.',
+  },
+  {
+    name: 'Dol Amroth',
+    point: [600, 450],
+    lore: 'Placeholder lore description for Dol Amroth.',
+  },
+  {
+    name: 'Forlond',
+    point: [648, 330],
+    lore: 'Placeholder lore description for Forlond.',
+  },
+  {
+    name: 'Fornost Erian',
+    point: [628, 380],
+    lore: 'Placeholder lore description for Fornost Erian.',
+  },
+  {
+    name: 'Hobbiton',
+    point: [664, 290],
+    lore: 'Placeholder lore description for Hobbiton.',
+  },
+  {
+    name: 'Methraith',
+    point: [636, 360],
+    lore: 'Placeholder lore description for Methraith.',
+  },
+  {
+    name: 'Michel Delving',
+    point: [670, 280],
+    lore: 'Placeholder lore description for Michel Delving.',
+  },
+  {
+    name: 'Minas Ithil',
+    point: [612, 420],
+    lore: 'Placeholder lore description for Minas Ithil.',
+  },
+  {
+    name: 'Minas Tirith',
+    point: [608, 430],
+    lore: 'Placeholder lore description for Minas Tirith.',
+  },
+  {
+    name: 'Osgiliath',
+    point: [616, 410],
+    lore: 'Placeholder lore description for Osgiliath.',
+  },
+  {
+    name: 'Pelargir',
+    point: [604, 440],
+    lore: 'Placeholder lore description for Pelargir.',
+  },
+  {
+    name: 'Rivendell',
+    point: [596, 460],
+    lore: 'Placeholder lore description for Rivendell.',
+  },
+  {
+    name: 'Tharbad',
+    point: [644, 340],
+    lore: 'Placeholder lore description for Tharbad.',
+  },
+  {
     name: 'The Shire',
     point: [668, 275],
     lore: '𝕸𝖎𝖈𝖍𝖊𝖑 𝕯𝖊𝖑𝖛𝖎𝖓𝖌, 𝖙𝖍𝖊 𝖑𝖆𝖗𝖌𝖊𝖘𝖙 𝖈𝖎𝖙𝖞 𝖎𝖓 𝖙𝖍𝖊 𝖘𝖍𝖗𝖎𝖗𝖊,𝖑𝖔𝖈𝖆𝖙𝖊𝖉 𝖎𝖓 𝖙𝖍𝖊 𝖜𝖍𝖎𝖙𝖊 𝖉𝖔𝖜𝖓𝖘.𝕻𝖔𝖕𝖚𝖑𝖆𝖙𝖊𝖉 𝖇𝖞 𝖍𝖔𝖇𝖇𝖎𝖙𝖘 ,𝖙𝖍𝖊 𝖒𝖆𝖞𝖔𝖗 𝖎𝖘 𝖂𝖎𝖑𝖑 𝖂𝖍𝖎𝖙𝖋𝖔𝖔𝖙. 𝕬𝖓𝖉 𝖙𝖍𝖊 𝖔𝖓𝖑𝖞 𝖕𝖗𝖎𝖘𝖔𝖓 𝖎𝖓 𝖙𝖍𝖊 𝕾𝖍𝖗𝖎𝖗𝖊 𝖙𝖍𝖊 𝕷𝖔𝖈𝖐𝖍𝖔𝖑𝖊𝖘 𝖆𝖗𝖊 𝖍𝖊𝖗𝖊.',
   },
   {
-    name: 'Bree',
-    point: [615, 270],
-    lore: 'A crossroads town where Rangers watch the road and Strider first joins the Fellowship.',
+    name: 'The Tower Hill\'s',
+    point: [652, 320],
+    lore: 'Placeholder lore description for The Tower Hill\'s.',
   },
   {
-    name: 'Rivendell',
-    point: [655, 320],
-    lore: 'Elrond\'s hidden valley, a refuge of lore and healing, and site of the Council of Elrond.',
+    name: 'Tuckborough',
+    point: [656, 310],
+    lore: 'Placeholder lore description for Tuckborough.',
   },
   {
-    name: 'Moria',
-    point: [510, 295],
-    lore: 'The ancient Dwarven realm of Khazad-dum, where drums in the deep still echo.',
-  },
-  {
-    name: 'Lothlorien',
-    point: [475, 340],
-    lore: 'Galadriel\'s golden wood, where time seems to flow differently under mallorn boughs.',
-  },
-  {
-    name: 'Isengard',
-    point: [490, 250],
-    lore: 'Saruman\'s ringed fortress Orthanc, later reclaimed after the Ents\' wrath.',
-  },
-  {
-    name: 'Helm\'s Deep',
-    point: [455, 235],
-    lore: 'The mountain fortress of Rohan, famed for the long night of siege and sudden dawn.',
-  },
-  {
-    name: 'Minas Tirith',
-    point: [410, 330],
-    lore: 'The White City of Gondor, standing against Sauron in the War of the Ring.',
-  },
-  {
-    name: 'Mordor / Mount Doom',
-    point: [540, 548],
-    lore: 'Sauron\'s black land and the fire where the One Ring was forged and unmade.',
+    name: 'Tyrn Gornthad',
+    point: [640, 350],
+    lore: 'Placeholder lore description for Tyrn Gornthad.',
   },
 ]
 
